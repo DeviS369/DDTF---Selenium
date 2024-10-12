@@ -24,6 +24,6 @@ def create_excel_file():
         sheet.append(row)
     
     # Save the workbook
-    workbook.save("data/login_test_data.xlsx")
+    workbook.save("login_test_data.xlsx")
 
 create_excel_file()
