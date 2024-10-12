@@ -28,7 +28,7 @@ def write_test_result(test_id, result, file_path):
             break
     workbook.save(file_path)
 
-@pytest.mark.parametrize("test_id,username,password,date,time_of_test,name_of_tester,test_result", get_test_data("data/login_test_data.xlsx"))
+@pytest.mark.parametrize("test_id,username,password,date,time_of_test,name_of_tester,test_result", get_test_data("login_test_data.xlsx"))
 def test_login(test_id, username, password, date, time_of_test, name_of_tester, test_result):
     driver = webdriver.Chrome()  # Assumes chromedriver is in your PATH
     driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
@@ -45,6 +45,6 @@ def test_login(test_id, username, password, date, time_of_test, name_of_tester, 
         result = "Failed"
     
     # Write result back to Excel
-    write_test_result(test_id, result, "data/login_test_data.xlsx")
+    write_test_result(test_id, result, "login_test_data.xlsx")
     
     driver.quit()
